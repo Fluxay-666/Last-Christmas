@@ -131,9 +131,9 @@
         var myAuto = document.getElementById('music1');
         var app = document.getElementById("app");
 
-        myAuto.play();
         // 点击播放音乐
         app.addEventListener('click', function () {
+            myAuto.play();
             document.querySelector('.music-hint').style.display = 'none';
         });
 
@@ -150,7 +150,6 @@
             snowflake.style.left = Math.random() * 100 + '%';
             snowflake.style.opacity = Math.random();
             snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-
             document.body.appendChild(snowflake);
 
             setTimeout(() => {
