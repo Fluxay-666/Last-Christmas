@@ -100,7 +100,7 @@
     <div id="main">
         <video id="video1" muted="muted" autoplay="autoplay" loop="loop" src="./video/chrismas.mp4">
         </video>
-        <audio id="music1" autostart="true" loop="loop" preload="auto" controls hidden="true">
+        <audio id="music1" autoplay="autoplay" autostart="true" loop="loop" preload="auto" controls hidden="true">
             <source src="./music/jinniandongtianpeizhewoba.mp3">
         </audio>
     </div>
@@ -119,7 +119,7 @@
     </div>
 
     <!-- 音乐提示 -->
-    <!-- <div class="music-hint">点击页面任意处播放音乐</div> -->
+    <div class="music-hint">点击页面任意处播放音乐</div>
 
     <script type="text/javascript">
         // 设置视频播放速度
@@ -133,14 +133,14 @@
 
         myAuto.play();
         // 点击播放音乐
-        // app.addEventListener('click', function () {
-        //     document.querySelector('.music-hint').style.display = 'none';
-        // });
+        app.addEventListener('click', function () {
+            document.querySelector('.music-hint').style.display = 'none';
+        });
 
-        // // 自动触发音乐播放
-        // app.addEventListener("mousemove", function () {
-        //     myAuto.play();
-        // }, true);
+        // 自动触发音乐播放
+        app.addEventListener("mousemove", function () {
+            myAuto.play();
+        }, true);
 
         // 创建雪花效果
         function createSnowflake() {
