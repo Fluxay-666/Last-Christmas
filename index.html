@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
-    <title>致晨晨的圣诞祝福</title>
+    <title>致欣欣的圣诞祝福</title>
     <style>
-        html, body {
+        html,
+        body {
             margin: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
+
         #main {
             position: fixed;
             top: 0;
@@ -17,11 +20,13 @@
             width: 100%;
             height: 100%;
         }
+
         #video1 {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .greeting {
             position: fixed;
             bottom: 80px;
@@ -36,6 +41,7 @@
             z-index: 100;
             line-height: 1.8;
         }
+
         .special-text {
             font-size: 20px;
             color: #fff;
@@ -43,10 +49,19 @@
             margin-top: 15px;
             text-shadow: 0 0 8px #ff1493;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .music-hint {
             position: fixed;
             top: 20px;
@@ -56,6 +71,7 @@
             opacity: 0.8;
             z-index: 100;
         }
+
         .snowflake {
             color: #fff;
             font-size: 1em;
@@ -66,16 +82,19 @@
             pointer-events: none;
             animation: snowfall linear infinite;
         }
+
         @keyframes snowfall {
             0% {
                 transform: translateY(-100%);
             }
+
             100% {
                 transform: translateY(100vh);
             }
         }
     </style>
 </head>
+
 <body id="app">
     <!-- 主要内容 -->
     <div id="main">
@@ -88,19 +107,19 @@
 
     <!-- 祝福文字 -->
     <div class="greeting">
-        亲爱的晨晨：<br>
+        亲爱的欣欣：<br>
         在即将到来的圣诞节<br>
         愿这棵闪耀的圣诞树能带给你温暖与快乐<br>
         <div class="special-text">
             愿每一片雪花都带着祝福落在你肩头<br>
             愿每一颗星星都为你的梦想闪烁<br>
             愿圣诞老人把最美好的礼物悄悄放在你枕边<br>
-            Merry Christmas, 晨晨!
+            Merry Christmas, 欣欣!
         </div>
     </div>
 
     <!-- 音乐提示 -->
-    <div class="music-hint">点击页面任意处播放音乐</div>
+    <!-- <div class="music-hint">点击页面任意处播放音乐</div> -->
 
     <script type="text/javascript">
         // 设置视频播放速度
@@ -111,17 +130,17 @@
         // 音乐播放控制
         var myAuto = document.getElementById('music1');
         var app = document.getElementById("app");
-        
-        // 点击播放音乐
-        app.addEventListener('click', function() {
-            myAuto.play();
-            document.querySelector('.music-hint').style.display = 'none';
-        });
 
-        // 自动触发音乐播放
-        app.addEventListener("mousemove", function() {
-            myAuto.play();
-        }, true);
+        myAuto.play();
+        // 点击播放音乐
+        // app.addEventListener('click', function () {
+        //     document.querySelector('.music-hint').style.display = 'none';
+        // });
+
+        // // 自动触发音乐播放
+        // app.addEventListener("mousemove", function () {
+        //     myAuto.play();
+        // }, true);
 
         // 创建雪花效果
         function createSnowflake() {
@@ -131,9 +150,9 @@
             snowflake.style.left = Math.random() * 100 + '%';
             snowflake.style.opacity = Math.random();
             snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-            
+
             document.body.appendChild(snowflake);
-            
+
             setTimeout(() => {
                 snowflake.remove();
             }, 5000);
@@ -142,7 +161,7 @@
         // 每200毫秒创建一个雪花
         setInterval(createSnowflake, 200);
 
-        setInterval(function() {
+        setInterval(function () {
             if ("createEvent" in document) {
                 var evt = document.createEvent("HTMLEvents");
                 evt.initEvent("mousemove", false, true);
@@ -153,4 +172,5 @@
         }, 1000);
     </script>
 </body>
+
 </html>
